@@ -5,7 +5,7 @@ GPIO.setup(18, GPIO.OUT)
 GPIO.setup(23, GPIO.OUT)
 GPIO.setup(24, GPIO.OUT)
 GPIO.setup(25, GPIO.OUT)
-while True
+while True:
     GPIO.output(24, True)
     time.sleep(10)
     GPIO.output(24, False)
@@ -15,7 +15,7 @@ while True
     GPIO.output(18, True)
     time.sleep(1)
     GPIO.output(18, False)
-    for x in range(0, 8)
+    for x in range(0, 8):
         GPIO.output(25, True)
         time.sleep(0.5)
         GPIO.output(25, False)
