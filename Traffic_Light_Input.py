@@ -1,0 +1,26 @@
+import RPi.GPIO as GPIO
+import time
+i1 = int(raw_input("How many seconds do you want the red light to flash?"))
+i2 = int(raw_input("How many seconds do you want the yellow light to flash?"))
+i3 = int(raw_input("How many seconds do you want the green light to flash?"))
+i4 = int(raw_input("How many seconds do you want the blue light to flash?"))
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(18, GPIO.OUT)
+GPIO.setup(23, GPIO.OUT)
+GPIO.setup(24, GPIO.OUT)
+GPIO.setup(25, GPIO.OUT)
+while True:
+    GPIO.output(24, True)
+    time.sleep(i3)
+    GPIO.output(24, False)
+    GPIO.output(23, True)
+    time.sleep(i2)
+    GPIO.output(23, False)
+    GPIO.output(18, True)
+    time.sleep(i1)
+    GPIO.output(18, False)
+    for x in range(0, i4):
+        GPIO.output(25, True)
+        time.sleep(0.5)
+        GPIO.output(25, False)
+        time.sleep(0.5)
